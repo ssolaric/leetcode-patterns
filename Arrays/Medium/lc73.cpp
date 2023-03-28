@@ -3,14 +3,14 @@ public:
     void setZeroes(vector<vector<int>>& matrix) {
         int n = matrix.size();
         int m = matrix[0].size();
-        
+
         bool zerosFirstRow = false;
         bool zerosFirstCol = false;
-        
+
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (matrix[i][j] == 0) {
-                    // Special cases: first row and first column must me marked as zeros.
+                    // Special cases: first row and first column must be marked as zeros.
                     if (i == 0) {
                         zerosFirstRow = true;
                     }
