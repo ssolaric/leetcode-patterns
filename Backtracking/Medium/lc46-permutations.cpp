@@ -1,6 +1,7 @@
 class Solution {
 public:
-    void backtrack(int depth, const vector<int>& nums, vector<bool>& visited, vector<vector<int>>& ans, vector<int>& partial) {
+    void backtrack(int depth, const vector<int>& nums, vector<bool>& visited, vector<vector<int>>& ans,
+                   vector<int>& partial) {
         if (depth == nums.size()) {
             ans.push_back(partial);
             return;
@@ -15,7 +16,7 @@ public:
             }
         }
     }
-    
+
     vector<vector<int>> permute(vector<int>& nums) {
         sort(nums.begin(), nums.end());
         vector<vector<int>> ans;

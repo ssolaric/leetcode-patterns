@@ -12,7 +12,7 @@ public:
             partial.pop_back();
             return;
         }
-        
+
         if (numOpen == numClose) {
             partial += '(';
             backtrack(numOpen + 1, numClose, n, ans, partial);
@@ -22,13 +22,13 @@ public:
             partial += '(';
             backtrack(numOpen + 1, numClose, n, ans, partial);
             partial.pop_back();
-            
+
             partial += ')';
             backtrack(numOpen, numClose + 1, n, ans, partial);
             partial.pop_back();
         }
     }
-    
+
     vector<string> generateParenthesis(int n) {
         vector<string> ans;
         string partial;

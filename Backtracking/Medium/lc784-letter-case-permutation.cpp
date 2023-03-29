@@ -18,7 +18,7 @@ public:
         }
         partial.pop_back(); // Important! Don't forget this line.
     }
-    
+
     vector<string> letterCasePermutation(string S) {
         vector<string> ans;
         string partial;

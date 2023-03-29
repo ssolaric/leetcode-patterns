@@ -28,7 +28,7 @@ public:
             partial.replace(indNotDigit + 1, n - 1 - indNotDigit, to_string(prevNumber + 1));
         }
     }
-    
+
     void backtrack(int depth, const string& word, vector<string>& ans, string partial) {
         if (depth == word.size()) {
             ans.push_back(partial);
@@ -40,7 +40,7 @@ public:
         addOne(partial);
         backtrack(depth + 1, word, ans, partial);
     }
-    
+
     vector<string> generateAbbreviations(string word) {
         vector<string> ans;
         string partial;

@@ -1,15 +1,4 @@
-const array<string, 10> digitToLetters = {
-    "",
-    "",
-    "abc",
-    "def",
-    "ghi",
-    "jkl",
-    "mno",
-    "pqrs",
-    "tuv",
-    "wxyz"
-};
+const array<string, 10> digitToLetters = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
 class Solution {
 public:
@@ -26,7 +15,7 @@ public:
             partial.pop_back();
         }
     }
-    
+
     vector<string> letterCombinations(string digits) {
         if (digits == "") return {};
         vector<string> ans;

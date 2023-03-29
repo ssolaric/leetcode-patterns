@@ -16,7 +16,7 @@ public:
             }
         }
     }
-    
+
     vector<vector<int>> combinationSum3(int k, int n) {
         // We can use k numbers from 1 to 9 to add up to n
         vector<vector<int>> ans;

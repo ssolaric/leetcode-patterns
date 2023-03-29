@@ -19,7 +19,7 @@ public:
                         // These options would also be fine:
                         // ans.push_back(left + "(" + right + ")");
                         // ans.push_back(right + "(" + left + ")");
-                        // ans.push_back("(" + right + ")" + left); 
+                        // ans.push_back("(" + right + ")" + left);
                     }
                 }
             }

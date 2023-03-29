@@ -11,7 +11,7 @@ public:
             partial.pop_back();
         }
     }
-    
+
     vector<vector<int>> combine(int n, int k) {
         vector<vector<int>> ans;
         vector<int> partial;

@@ -4,7 +4,7 @@ const int dc[4] = {0, 1, 0, -1};
 class Solution {
 public:
     int n, m;
-    
+
     bool backtrack(vector<vector<char>>& board, int row, int col, const string& word, int wordIndex) {
         if (wordIndex == word.size()) {
             return true;
@@ -26,7 +26,7 @@ public:
         board[row][col] = letter;
         return false;
     }
-    
+
     bool exist(vector<vector<char>>& board, string word) {
         n = board.size();
         if (n == 0) return false;
