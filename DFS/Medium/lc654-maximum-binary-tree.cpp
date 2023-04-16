@@ -11,14 +11,6 @@
  */
 class Solution {
 public:
-    int getMax(const vector<int>& nums, int lo, int hi) {
-        int ans = nums[lo];
-        for (int i = lo + 1; i <= hi; i++) {
-            ans = max(ans, nums[i]);
-        }
-        return ans;
-    }
-    
     TreeNode* build(const vector<int>& nums, int lo, int hi) {
         if (lo >= hi) return nullptr;
         auto itMax = max_element(nums.begin() + lo, nums.begin() + hi);

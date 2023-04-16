@@ -30,23 +30,21 @@ public:
         vector<vector<int>> ans;
         for (int i = 0; i < n; i++) {
             pacific[i][0] = true;
-            atlantic[i][m-1] = true;
+            atlantic[i][m - 1] = true;
         }
         for (int j = 0; j < m; j++) {
             pacific[0][j] = true;
-            atlantic[n-1][j] = true;
+            atlantic[n - 1][j] = true;
         }
-        vector<vector<int>> visited(n, vector<int>(m, 0));
+
         for (int i = 0; i < n; i++) {
             dfs(i, 0, matrix, pacific);
             dfs(i, m - 1, matrix, atlantic);
         }
-        
         for (int j = 0; j < m; j++) {
             dfs(0, j, matrix, pacific);
             dfs(n - 1, j, matrix, atlantic);
         }
-        
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (pacific[i][j] && atlantic[i][j]) {

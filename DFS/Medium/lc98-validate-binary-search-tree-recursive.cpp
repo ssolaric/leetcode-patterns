@@ -17,7 +17,7 @@ public:
         if (maximum != nullptr && root->val >= maximum->val) return false;
         return validate(root->left, minimum, root) && validate(root->right, root, maximum);
     }
-    
+
     bool isValidBST(TreeNode* root) {
         return validate(root, nullptr, nullptr);
     }

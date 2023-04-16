@@ -11,8 +11,8 @@
  */
 class Solution {
 public:
-    TreeNode* build(vector<int>& preorder, vector<int>& inorder, unordered_map<int, int>& indices,
-                    int loPre, int hiPre, int loIn, int hiIn) {
+    TreeNode* build(vector<int>& preorder, vector<int>& inorder, unordered_map<int, int>& indices, int loPre, int hiPre,
+                    int loIn, int hiIn) {
         if (loPre > hiPre) return nullptr;
         int ind = indices[preorder[loPre]];
         int leftSize = ind - loIn;
@@ -21,7 +21,7 @@ public:
         root->right = build(preorder, inorder, indices, loPre + 1 + leftSize, hiPre, ind + 1, hiIn);
         return root;
     }
-    
+
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
         int n = preorder.size();
         unordered_map<int, int> indices;

@@ -2,18 +2,16 @@ const int MAX_CHARS = 26;
 
 class Trie {
 public:
-    /** Initialize your data structure here. */
     Trie() {
         for (int i = 0; i < MAX_CHARS; i++) {
             children[i] = nullptr;
         }
     }
     
-    /** Inserts a word into the trie. */
     void insert(string word) {
         Trie* cur = this;
-        for (int i = 0; i < word.size(); i++) {
-            int ind = word[i] - 'a';
+        for (char c : word) {
+            int ind = c - 'a';
             if (cur->children[ind] == nullptr) {
                 cur->children[ind] = new Trie();
             }
@@ -22,11 +20,10 @@ public:
         cur->isEndOfWord = true;
     }
     
-    /** Returns if the word is in the trie. */
     bool search(string word) {
         Trie* cur = this;
-        for (int i = 0; i < word.size(); i++) {
-            int ind = word[i] - 'a';
+        for (char c : word) {
+            int ind = c - 'a';
             if (cur->children[ind] == nullptr) {
                 return false;
             }
@@ -35,11 +32,10 @@ public:
         return cur->isEndOfWord;
     }
     
-    /** Returns if there is any word in the trie that starts with the given prefix. */
     bool startsWith(string prefix) {
         Trie* cur = this;
-        for (int i = 0; i < prefix.size(); i++) {
-            int ind = prefix[i] - 'a';
+        for (char c : prefix) {
+            int ind = c - 'a';
             if (cur->children[ind] == nullptr) {
                 return false;
             }

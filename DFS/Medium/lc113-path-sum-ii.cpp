@@ -28,7 +28,7 @@ public:
         dfs(root->right, sum - root->val, ans, partial);
         partial.pop_back();
     }
-    
+
     vector<vector<int>> pathSum(TreeNode* root, int sum) {
         vector<vector<int>> ans;
         vector<int> partial;

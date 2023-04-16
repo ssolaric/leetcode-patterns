@@ -12,12 +12,14 @@ public:
                 if (it == visited.end()) {
                     visited.insert(word1[i]);
                 }
-                i++; j++; continue;
+                i++;
+                j++;
+                continue;
             }
-            
+
             auto it1 = visited.find(word1[i]);
             auto it2 = visited.find(word2[j]);
-            
+
             if (it1 == visited.end() && it2 == visited.end()) {
                 graph[word1[i] - 'a'].push_back(word2[j]);
                 visited.insert(word1[i]);
@@ -44,10 +46,10 @@ public:
         }
         return i == n1;
     }
-    
+
     string ans;
     bool hasCycle = false;
-    
+
     void dfs(int u, vector<vector<int>>& graph, vector<int>& traversed) {
         traversed[u] = 1;
         for (auto v : graph[u]) {
@@ -62,22 +64,22 @@ public:
         ans += char(u + 'a');
         traversed[u] = 2;
     }
-    
+
     string alienOrder(vector<string>& words) {
         vector<vector<int>> graph(26);
         set<char> visited;
-        
+
         vector<bool> requiredLetters(26);
         for (auto& s : words) {
             for (auto& c : s) {
                 requiredLetters[c - 'a'] = true;
             }
         }
-        
+
         int numWords = words.size();
         int order = 0;
         for (int i = 1; i < numWords; i++) {
-            if (!connect(words[i-1], words[i], graph, visited)) {
+            if (!connect(words[i - 1], words[i], graph, visited)) {
                 return "";
             }
         }
