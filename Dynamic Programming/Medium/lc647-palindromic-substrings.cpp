@@ -1,7 +1,6 @@
 class Solution {
 public:
     int expand(const string& s, int i, int j) {
-        int len = j - i - 1;
         int count = 0;
         while (i >= 0 && j < s.size()) {
             if (s[i] == s[j]) {
