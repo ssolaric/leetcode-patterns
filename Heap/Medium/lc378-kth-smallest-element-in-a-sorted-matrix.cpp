@@ -10,7 +10,7 @@ public:
         for (int i = 0; i < n; i++) {
             pq.push({i, 0});
         }
-        
+
         for (int i = 0; i < k - 1; i++) {
             auto [row, col] = pq.top();
             int num = matrix[row][col];
