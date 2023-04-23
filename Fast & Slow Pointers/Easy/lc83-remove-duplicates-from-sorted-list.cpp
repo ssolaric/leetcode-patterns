@@ -10,13 +10,12 @@
  */
 class Solution {
 public:
-    ListNode* removeElements(ListNode* head, int val) {
-        ListNode* dummy = new ListNode(val - 1);
-        dummy->next = head;
-        ListNode* prev = dummy;
-        ListNode* cur = head;
+    ListNode* deleteDuplicates(ListNode* head) {
+        if (head == nullptr) return nullptr;
+        ListNode* prev = head;
+        ListNode* cur = head->next;
         while (cur != nullptr) {
-            if (cur->val == val) {
+            if (prev->val == cur->val) {
                 prev->next = cur->next;
                 cur = cur->next;
             }
@@ -25,6 +24,6 @@ public:
                 cur = cur->next;
             }
         }
-        return dummy->next;
+        return head;
     }
 };
